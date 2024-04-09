@@ -30,7 +30,6 @@ RUN npm install --only=production
 
 # Copy the built JavaScript code and the .env file from the 'builder' stage
 COPY --from=builder /usr/src/app/dist ./dist
-COPY --from=builder /usr/src/app/.env ./
 
 # Expose port 3000
 EXPOSE 3000
