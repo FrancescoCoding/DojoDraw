@@ -131,7 +131,7 @@ app.use("/raffles", raffleRoutes);
 // });
 
 // Schedule automated raffle draws every minute
-cron.schedule("* * * * *", () => {
+cron.schedule("0 0 * * *", () => {
   console.log("Initiating automated draw for eligible raffles...");
   automatedDrawForEligibleRaffles()
     .then(() => console.log("Automated draw completed."))
