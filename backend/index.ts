@@ -40,12 +40,8 @@ app.use(
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // Only send cookie over HTTPS.
-      domain:
-        process.env.NODE_ENV === "development"
-          ? "localhost"
-          : "DojoDraw.netlify.app",
-      sameSite: process.env.NODE_ENV === "development" ? "lax" : "none", // Use 'none' for cross-site delivery
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "development" ? "lax" : "none",
       // maxAge: 24 * 60 * 60 * 1000, // 24 hours
     },
   })
