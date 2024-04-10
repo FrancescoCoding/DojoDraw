@@ -28,6 +28,8 @@ declare global {
   }
 }
 
+app.set("trust proxy", 1); // Trust first proxy
+
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
