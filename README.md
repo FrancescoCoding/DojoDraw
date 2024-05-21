@@ -2,7 +2,9 @@
 
 This guide provides instructions for setting up the web server on a fresh Ubuntu server. It covers the installation of Docker and Docker Compose. The installation of Node.js and other dependencies such as npm packages are handled by Docker, as specified in the Dockerfiles for both the frontend and backend. For example, both Dockerfiles use the `node:16` image as a base, ensuring that Node.js is available without requiring a separate installation on the host system. Additionally, dependencies are installed within the containers using `RUN npm install`, eliminating the need for Node.js and npm on the Ubuntu server outside of Docker. This approach focuses on Docker as the primary requirement for running DojoDraw.
 
-> ⚠️ **Disclaimer:** Please note that this local setup utilises a connection URI for MongoDB Atlas, specified within the environment variables to enhance security. Due to the firewall settings on the Robert Gordon University (RGU) network, this local setup might not work as expected when connected to the RGU network. For convenience and to ensure accessibility, a live version of this application is hosted on Google Cloud for testing purposes. This ensures that you can evaluate and interact with the application without facing connectivity issues imposed by network restrictions.
+> ⚠️ **Disclaimer:** Please note that this local setup utilises a connection URI for MongoDB Atlas, specified within the environment variables to enhance security. Due to the firewall settings on the Robert Gordon University (RGU) network, this local setup might not work as expected when connected to the RGU network. For convenience and to ensure accessibility, a live version of this application is hosted on the [live link](https://dojodraw.netlify.app/) below. This ensures that you can evaluate and interact with the application without facing connectivity issues imposed by network restrictions.
+
+## 🌐 [DojoDraw Live link](https://dojodraw.netlify.app/) (hosted on Netlify & Google Cloud)
 
 ## 📋 Prerequisites
 
@@ -14,7 +16,7 @@ This guide provides instructions for setting up the web server on a fresh Ubuntu
 You can automatically download and run the setup script using the following command. This command will download the `setup.sh` script, make it executable, and then run it, performing all necessary setup steps.
 
 ```bash
-curl -o setup.sh https://raw.githubusercontent.com/RobertGordonUniversity/coursework-FrancescoCoding/main/setup.sh && chmod +x setup.sh && sudo ./setup.sh
+curl -o setup.sh https://raw.githubusercontent.com/RobertGordonUniversity/coursework-FrancescoCoding/main/setup.sh?token=<get-from-owner> && chmod +x setup.sh && sudo ./setup.sh
 ```
 
 ## 🔧 Post-Setup
@@ -73,7 +75,7 @@ cd coursework-FrancescoCoding
 
 Rename the `.env.example` file to `.env` in the`backend` directory.
 To maintain security, the `.env` file is not included in the repository.
-The only thing missing is the MONOGO_URI <PASSWORD>, which is the connection URI for MongoDB Atlas.
+The only thing missing is the MONGO_URI <PASSWORD>, which is the connection URI for MongoDB Atlas.
 This will need to be obtained by the project owner and added to the `.env` file.
 
 You can also create a different database and add the connection URI to the `.env` file. This will allow you to run the application with your own database, as all the necessary collections will be created automatically.
