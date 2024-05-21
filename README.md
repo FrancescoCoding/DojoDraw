@@ -16,7 +16,7 @@ This guide provides instructions for setting up the web server on a fresh Ubuntu
 You can automatically download and run the setup script using the following command. This command will download the `setup.sh` script, make it executable, and then run it, performing all necessary setup steps.
 
 ```bash
-curl -o setup.sh https://raw.githubusercontent.com/RobertGordonUniversity/coursework-FrancescoCoding/main/setup.sh?token=<get-from-owner> && chmod +x setup.sh && sudo ./setup.sh
+curl -o setup.sh https://raw.githubusercontent.com/FrancescoCoding/DojoDraw/main/setup.sh?token=<get-from-owner> && chmod +x setup.sh && sudo ./setup.sh
 ```
 
 ## 🔧 Post-Setup
@@ -67,7 +67,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 Clone the project repository from GitHub.
 
 ```bash
-git clone https://github.com/RobertGordonUniversity/coursework-FrancescoCoding
+git clone https://github.com/FrancescoCoding/DojoDraw
 cd coursework-FrancescoCoding
 ```
 
