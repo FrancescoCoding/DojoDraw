@@ -128,13 +128,13 @@ app.use("/raffles", raffleRoutes);
 //   next();
 // });
 
-// Schedule automated raffle draws every minute
-cron.schedule("0 0 * * *", () => {
-  console.log("Initiating automated draw for eligible raffles...");
-  automatedDrawForEligibleRaffles()
-    .then(() => console.log("Automated draw completed."))
-    .catch((err) => console.error("Error during automated draw:", err));
-});
+// Schedule automated raffle draws every day at midnight
+// cron.schedule("0 0 * * *", () => {
+//   console.log("Initiating automated draw for eligible raffles...");
+//   automatedDrawForEligibleRaffles()
+//     .then(() => console.log("Automated draw completed."))
+//     .catch((err) => console.error("Error during automated draw:", err));
+// });
 
 /* Root path */
 app.get("/", (req: Request, res: Response) => {
